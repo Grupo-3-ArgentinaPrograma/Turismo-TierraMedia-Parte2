@@ -8,16 +8,16 @@ import java.util.List;
 
 import org.junit.Test;
 
+import model.Atraccion;
+import model.ComparadorDeProductos;
+import model.Producto;
+import model.Promo;
+import model.PromoAbsoluta;
+import model.PromoAxB;
+import model.PromoPorcentual;
+import model.TipoAtraccion;
+import model.Usuario;
 import sistema.AdministradorDeArchivos;
-import tierramedia.Atraccion;
-import tierramedia.ComparadorDeProductos;
-import tierramedia.Producto;
-import tierramedia.Promo;
-import tierramedia.PromoAbsoluta;
-import tierramedia.PromoAxB;
-import tierramedia.PromoPorcentual;
-import tierramedia.TipoAtraccion;
-import tierramedia.Usuario;
 
 public class test {
 

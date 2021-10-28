@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import model.*;
+
 public class AdministradorDeArchivos {
 
 	public static List<Usuario> leerUsuarios() {

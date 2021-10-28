@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
+import model.*;
+
 public class Sistema {
 	
 	public static void leerArchivos() {

@@ -1,4 +1,4 @@
-package tierramedia;
+package model;
 
 public class Atraccion extends Producto{
 	private Integer cupo;
