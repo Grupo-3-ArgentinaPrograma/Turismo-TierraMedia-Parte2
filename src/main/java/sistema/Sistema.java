@@ -1,4 +1,4 @@
-package tierramedia;
+package sistema;
 
 import java.io.IOException;
 import java.util.Collections;

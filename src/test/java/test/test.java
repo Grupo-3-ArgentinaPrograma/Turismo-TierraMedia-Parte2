@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import tierramedia.AdministradorDeArchivos;
+import sistema.AdministradorDeArchivos;
 import tierramedia.Atraccion;
 import tierramedia.ComparadorDeProductos;
 import tierramedia.Producto;
