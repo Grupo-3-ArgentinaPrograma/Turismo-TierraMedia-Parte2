@@ -1,6 +1,6 @@
 package test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -13,6 +13,7 @@ public class TestAtraccion {
 	Atraccion atraccion1;
 	Atraccion atraccion2;
 	Atraccion atraccion3;
+	
 	@Before
 	public void setUp() {
 		atraccion1 = new Atraccion("Arenas", 6, 7d, 9, TipoAtraccion.AVENTURA);
@@ -21,28 +22,46 @@ public class TestAtraccion {
 	}
 	
 	@Test
+	public void testConstructor() {
+		Atraccion atraccion4 = new Atraccion ("Lluvia",12,0.8d,15,TipoAtraccion.PAISAJE);
+		assertNotNull(atraccion4);
+	}
+	
+	@Test
 	public void obtenerCostoAtraccion() {
-		assertEquals(4,atraccion3.getPrecio(),0);
+		atraccion3.setPrecio(20);
+		assertEquals(20,atraccion3.getPrecio(),0);
 	}
 	
 	@Test
 	public void obtenerTiempoAtraccion() {
-		assertEquals(5,atraccion3.getTiempo(),0);
+		atraccion3.setTiempo(8d);
+		assertEquals(8d,atraccion3.getTiempo(),0);
 	}
 	
 	@Test
 	public void obtenerCupoAtraccion() {
-		assertEquals(11,atraccion2.getCupo(),0);
+		atraccion2.setCupo(3);
+		assertEquals(3,atraccion2.getCupo(),0);
 	}
 	
 	@Test
+	public void hayCupoAtraccion() {
+		atraccion2.setCupo(3);
+		assertTrue(atraccion2.hayCupo());
+		atraccion2.setCupo(0);
+		assertFalse(atraccion2.hayCupo());
+	}
+	
+	
+	@Test
 	public void obtenerNombreAtraccion() {
-		assertEquals("Cielo",atraccion1.getNombre(),0);
+		atraccion1.setNombre("Nuevo Cielo");
+		assertEquals("Nuevo Cielo",atraccion1.getNombre());
 	}
 	
 	@Test
 	public void obtenerTipoAtraccion() {
-		
 		assertEquals(TipoAtraccion.AVENTURA,atraccion1.getTipo());
 	}
 	

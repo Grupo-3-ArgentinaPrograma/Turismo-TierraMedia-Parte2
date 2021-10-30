@@ -13,7 +13,7 @@ public class Atraccion extends Producto{
 	}
 
 	public void setCupo(Integer cupo) {
-		if(cupo>0) {
+		if(cupo>=0) {
 			this.cupo = cupo;
 		}
 	}
