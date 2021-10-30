@@ -5,7 +5,7 @@ public class Atraccion extends Producto{
 	
 	public Atraccion(String nombre, Integer costo, Double duracion, Integer cupo, TipoAtraccion tipo) {
 		super(tipo,nombre,costo,duracion);
-		this.cupo = cupo;
+		this.setCupo(cupo);
 	}
 
 	public Integer getCupo() {
@@ -13,7 +13,9 @@ public class Atraccion extends Producto{
 	}
 
 	public void setCupo(Integer cupo) {
-		this.cupo = cupo;
+		if(cupo>0) {
+			this.cupo = cupo;
+		}
 	}
 	
 	public Boolean hayCupo() {

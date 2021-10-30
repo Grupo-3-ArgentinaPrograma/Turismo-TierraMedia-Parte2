@@ -5,14 +5,14 @@ import java.util.List;
 public abstract class Producto{
 	protected TipoAtraccion tipo;
 	protected String nombre;
-	protected Integer precio;
+	protected Integer valor;
 	protected Double tiempo;
 	
-	public Producto(TipoAtraccion tipo, String nombre, Integer precio, Double tiempo) {
+	public Producto(TipoAtraccion tipo, String nombre, Integer valor, Double tiempo) {
 		this.tipo = tipo;
-		this.nombre = nombre;
-		this.precio = precio;
-		this.tiempo = tiempo;
+		this.setTiempo(tiempo);;
+		this.setPrecio(valor);
+		this.setNombre(nombre);
 	}
 	
 	public TipoAtraccion getTipo() {
@@ -20,15 +20,23 @@ public abstract class Producto{
 	}
 
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
+	}
+	
+	public void setNombre(String nombre) {
+		if(nombre !=null && nombre != "") {
+			this.nombre = nombre;
+		}
 	}
 
 	public Integer getPrecio() {
-		return precio;
+		return valor;
 	}
 
 	public void setPrecio(Integer precio) {
-		this.precio = precio;
+		if(precio>0) {
+			this.valor = precio;	
+		}
 	}
 
 	public Double getTiempo() {
@@ -36,7 +44,9 @@ public abstract class Producto{
 	}
 
 	public void setTiempo(Double tiempo) {
-		this.tiempo = tiempo;
+		if(tiempo>0) {
+			this.tiempo = tiempo;	
+		}
 	}	
 	
 	public Boolean contieneAtraccion(List<Producto> compras) {

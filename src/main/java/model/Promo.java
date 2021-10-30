@@ -1,17 +1,17 @@
 package model;
 
-import java.util.Arrays;
 import java.util.List;
 
 public abstract class Promo extends Producto{
-	protected String[] nombres_atracciones;
+	protected String nombres_atracciones;
 	//valor : si es gratis, porcentual o absoluto
-	public Promo(TipoAtraccion nombrePack, String nombrePromo, String[] nombres_atracciones,Integer valor,Double duracionTotal) {
-		super(nombrePack,nombrePromo,valor,duracionTotal);
+	public Promo(TipoAtraccion nombrePack, String nombrePromo, String nombres_atracciones,Integer valor) {
+		super(nombrePack,nombrePromo,valor,0d);
 		this.nombres_atracciones = nombres_atracciones;
 	}
 	
 	public abstract Integer precio(List<Atraccion> atracciones);
+	public abstract String getTipoPromo();
 		
 	public void setCupos(List<Atraccion> atracciones, String[] elementos) {
 		for (Atraccion atraccion : atracciones){
@@ -56,15 +56,15 @@ public abstract class Promo extends Producto{
 	}
 	
 	public String[] getNombres_atracciones() {
-		return nombres_atracciones;
+		return nombres_atracciones.split("-");
 	}
 
 	@Override
 	public String toString() {
-		return "Promo ( Pack: "+ nombre + " Tipo de Promo : " + tipo +  ", Atracciones incluidas : " + Arrays.toString(nombres_atracciones) + ", Precio : " + precio + ", Tiempo total : " + tiempo + ")";
+		return "Promo ( "+ nombre + ", Tipo de Promo : " + tipo +  ", Atracciones incluidas : " + nombres_atracciones + ", Precio : " + valor + ", Tiempo total : " + tiempo + ")";
 	}
 	
 	public String nombresAtracciones() {
-		return Arrays.toString(nombres_atracciones);
+		return nombres_atracciones;
 	}
 }

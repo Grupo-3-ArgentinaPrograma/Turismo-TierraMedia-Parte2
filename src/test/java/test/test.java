@@ -21,11 +21,6 @@ import sistema.AdministradorDeArchivos;
 
 public class test {
 
-	@Test
-	public void obtenerCostoAtraccion() {
-		Atraccion atraccion = new Atraccion("Arenas", 6, 7d, 9, TipoAtraccion.AVENTURA);
-		assertEquals(6,atraccion.getPrecio(),0);
-	}
 	
 	@Test
 	public void obtenerCostoPromocion() {
@@ -46,11 +41,7 @@ public class test {
 		assertEquals(20,promo.getPrecio(),0);
 	}
 	
-	@Test
-	public void obtenerTiempoAtraccion() {
-		Atraccion atraccion = new Atraccion("Arenas", 9, 7d, 9, TipoAtraccion.AVENTURA);
-		assertEquals(7,atraccion.getTiempo(),0);
-	}
+	
 	
 	@Test
 	public void obtenerTiempoPromocion() {
@@ -72,31 +63,7 @@ public class test {
 		
 	}
 	
-	@Test
-	public void obtenerTipoAtraccion() {
-		Atraccion atraccion1 = new Atraccion("Playa", 10, 6d, 11, TipoAtraccion.PAISAJE);
-		
-		assertEquals(TipoAtraccion.PAISAJE,atraccion1.getTipo());
-		
-		List<Atraccion> atracciones = new LinkedList<Atraccion>();
-
-		Atraccion atraccion = new Atraccion("Playa", 10, 6d, 11, TipoAtraccion.PAISAJE);
-		Atraccion atraccion2 = new Atraccion("Cielo", 4, 5d, 8, TipoAtraccion.PAISAJE);
-		Atraccion atraccion3 = new Atraccion("Arenas", 9, 7d, 9, TipoAtraccion.AVENTURA);
-		
-		atracciones.add(atraccion);
-		atracciones.add(atraccion2);
-		atracciones.add(atraccion3);
 	
-		String[] nombres = {"Playa","Cielo"};
-		PromoPorcentual promo = new PromoPorcentual(TipoAtraccion.PAISAJE, "Porcentual", nombres,20);
-		
-		promo.establecerHsPromo(promo, atracciones);
-		promo.establecerPrecioPromo(promo, atracciones);
-		
-		assertEquals(TipoAtraccion.PAISAJE,promo.getTipo());
-		
-	}
 	
 	@Test
 	public void usuarioPuedeComprar() {

@@ -45,11 +45,42 @@ public class Usuario {
 	public Integer getGasto() {
 		return gasto;
 	}
-	
-	
 
 	public List<Producto> getCompras() {
 		return compras;
+	}
+	
+	public void setComprasRealizadas(String comprasStr, List<Atraccion> atracciones, List<Promo> promociones) {
+		for (String compra:comprasStr.split("/")) {
+			for(Atraccion atraccion:atracciones) {
+				if(compra.equals(atraccion.getNombre())) {
+					this.compras.add(atraccion);
+				}else 
+				{
+					for(String elemento:compra.split(":")) {
+						for(Promo promo:promociones) {
+							if(elemento.equals(promo.getNombre())) 
+							{
+								this.compras.add(promo);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	public String getStringCompras() {
+		String comprasStr = new String();
+		for(Producto compra : compras) {
+			if(compra instanceof Promo) {
+				comprasStr+=(compra.getNombre()+":"+((Promo)compra).nombresAtracciones()+"/");
+			}
+			if(compra instanceof Atraccion) {
+				comprasStr+=(compra.getNombre()+"/");
+			}
+		}
+		return comprasStr;
 	}
 	
 	public Boolean puedeComprar(Producto producto) {
